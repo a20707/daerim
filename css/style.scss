@@ -1,0 +1,531 @@
+﻿@charset "UTF-8";
+@import url('common.css');
+
+
+$basicyellow : #f9d342;
+$basicwhite : #fff;
+$basicblck : #000;
+$basicgray : #202228;
+$basicsoftgray : #777;
+
+
+
+// %f-s1 {
+//     font-size:1.2em;
+//     line-height:2;
+// }
+// @extend %f-s1;
+
+/*공용으로 쓸 css 정리 */
+
+@mixin normal_layout($w,$m,$pa) {
+    width:$w;
+    margin:$m;
+    padding:$pa;
+}
+@mixin display_flex($dis,$jucon,$align) {
+    display:$dis;
+    justify-content:$jucon;
+    align-items: $align;
+}
+
+
+dt,dd {display:inline;}
+
+h2 {font-size:45px; 
+    padding:2vh 0; 
+    text-transform: uppercase; 
+    color:$basicgray;}
+
+body{
+    position: relative;
+}
+
+/* --------------- 1. 메인 인덱스 --------------- */
+
+/* --------------- 1-1. 헤더 --------------- */
+
+
+header{
+    width:100%;
+    position: fixed;
+    top:0; left:0;
+    z-index: 3;
+    &:hover {background:rgba(255,255,255,0.9)}
+    &:hover .head_hide { background:rgba(255,255,255,0.9);top:65px;}
+    >div {
+        // background:rgba(255,255,255,0.8);
+        position: relative;
+        transition: .5s;
+        .head{                
+            @include normal_layout(70%,0 auto,2vh 0);
+            @include display_flex(flex,space-between,center);
+            height:65px; 
+            h1{
+                width:25%;
+                font-size:35px;
+                text-transform: uppercase; letter-spacing: .2em; color:$basicblck;
+                a{color:$basicblck;}
+            }
+            >nav{
+                position: relative;
+                width:65%;
+
+                >ul:first-child{
+                    @include display_flex(flex,space-between ,center );
+                    >li{
+                        display:inline-block;
+                        width:25%;
+                        text-align:center;
+                        a{
+                            color:$basicblck;
+                            font-weight:800;
+                        }
+                        
+                    }/*li*/
+                }/*ul end*/
+            }/*nav end*/
+            .menu-trigger{
+                position: relative;
+                width: 10%;
+                height: 16px;
+                z-index:10;
+                transform: scale(1);
+        
+                display: inline-block;
+                transition: all .4s;
+                box-sizing: border-box;
+                span{                    
+                    position: absolute;
+                    right: 0;
+                    width: 25px;
+                    height: 2px;
+                    background-color:$basicblck;
+                    border-radius: 4px;                
+                    }
+                span:nth-of-type(1){top:0;}
+                span:nth-of-type(2){top:50%; transform: translateY(-50%);}
+                span:nth-of-type(3){bottom:0;}   
+                }/*트리거 메뉴 종료*/
+        }/*head*/
+        .head_hide{                        
+            position: absolute; 
+            top:-500%; left:0;
+            transition:.7s;
+            @include normal_layout(100%,0 auto,0);
+            div{
+                @include normal_layout(70%,0 auto,0);
+                @include display_flex(flex,space-between ,flex-start);
+                div{width:25%; padding:1vh; img{width:80%;}}
+                .hide_menu{
+                    width:65%;
+                    padding:0;
+                    @include display_flex(flex,space-between ,flex-start);
+                    ul{
+                    width:25%;
+                    text-align:center;
+                        li{
+                            line-height:2em;
+                            a{
+                                &:hover {                                    
+                                    font-weight:800;
+                                    color:$basicblck;
+                                }
+                            }
+                        }
+                    }
+                            }/*himde_menu*/
+                }/*head_hide*/
+                .dummy{width:10%;}
+            }
+        }/*header div*/
+    }/*header*/
+
+/*---------트리거 메뉴 액티브---------*/
+header>div:nth-of-type(1) .menu-trigger.active span:nth-of-type(1) {
+    background-color: #fff;
+    transform: translateY(7px) rotate(45deg);
+} 
+
+header>div:nth-of-type(1) .menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+header>div:nth-of-type(1) .menu-trigger.active span:nth-of-type(3) {
+    background-color: #fff;
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+/* --------------- 1-2. 메인 --------------- */
+main{position:relative;}
+
+/* --------------- 1-2-1. 메인롤링 --------------- */
+
+.main_01_roll{
+    position: relative;
+    .slide{
+        position: relative;
+        .imgs{
+            width:100%;
+            height:70vh;
+            background:yellow;
+            overflow:hidden;
+            img{width:100%;}
+        }
+        .btn{}
+        .indi{}
+        .rolling_txt{
+            position: absolute;
+            top:50%; left:20%;
+            transform: translate(-20%,-50%);
+        }
+    }
+
+}
+
+/* --------------- 1-2-2. 미술관 소개 --------------- */
+.main_02_about{
+    position: relative;
+    @include normal_layout(70%,0 auto,2vh 0);
+    @include display_flex(flex,space-between,center );
+    min-height:30vh;
+    h2{
+        position: relative;
+       &:before{
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        height: 2rem;
+        background:$basicyellow;
+        z-index: -1;
+        transition: width .75s 0.95s ease-in-out;
+                }
+        }
+    div{
+        width:60%;
+        p{}
+        span{
+            display:inline-block;
+            border:1px solid $basicgray;
+            margin:2vh 0;
+            padding:1vh;
+            &:after{
+                content:'>';
+                padding:.5vw;
+            }
+            }
+    }
+       
+    }
+
+
+/* --------------- 1-2-3. 전시소개 --------------- */
+
+.main_03_exh{
+    position: relative;
+    @include normal_layout(100%,0 auto,2vh 0);
+    background:$basicgray;
+    h2{@include normal_layout(70%,0 auto,2vh 0);
+        color:$basicyellow;}
+    >div{
+       margin:1vh 0;
+        >div{           
+            width:100%;
+            @include display_flex(flex,space-between,flex-start);
+        }
+            .main_03_01{
+                width:50%;
+                height:700px;
+                
+                background:url("../img/main_exhi01.jpg");
+                // img{width:100%; height:100%;}
+            }
+            .main_03_02{
+                width:30%;
+               
+                padding:0 2%;
+                color:$basicwhite;
+                line-height:3em;
+                h3{font-size:2em;}
+                dt{font-weight: 700;}
+            }
+            .main_03_03{
+                width:20%;
+                height:700px;
+                
+                background:url("../img/main_exhi02.jpg");
+                // img{width:100%;height:100%;}
+            }
+        
+
+    }
+}
+
+/* --------------- 1-2-4. 클래스 --------------- */
+.main_04_class{
+    @include normal_layout(70%,0 auto,2vh 0);
+    >div{
+        >div{
+            @include display_flex(flex,space-between ,center );
+            margin:3vh 0;
+            figure{
+                width:48%;
+                position: relative;
+                &:hover img{transform: scale(1.2);}
+                &:hover .label:before,.label:after{
+                    position: absolute;
+                    transform: translateY(90deg); 
+                    
+                }
+
+                >div:nth-of-type(1){
+                    overflow:hidden;
+                    img{width:100%; transition:.5s;}
+                }
+                figcaption{
+                    p{
+                        &:after{
+                            content:'';
+                            border-bottom:1px solid #eee;
+                            display:block;
+                            margin:1vh 0;
+                        }
+                    }
+                    >span{
+                        color:$basicsoftgray;
+                        font-size:.8em;
+                    }
+                }
+                .label{
+                    position: absolute;
+                    top:5%; left:5%;
+                    width:4rem; height:4rem;
+                    color:#fff;
+                    &:before{
+                        content:'';
+                        position: absolute;
+                        width:3.3rem; height:3.3rem;
+                        top:50%; left:50%;
+                        transform: translate(-50%, -50%) translateY(0);
+                        background:$basicgray;
+                    }
+                    &:after{
+                        content:'';
+                        position: absolute;
+                        width:100%; height:100%;
+                        top:50%; left:50%;
+                        transform: translate(-50%, -50%) translateY(0);
+                        border:1px solid $basicgray;
+                    }                    
+                    span{
+                        position: absolute;
+                        text-align:center;
+                        z-index:3;
+                        top:50%; left:50%;
+                        transform: translate(-50%, -50%);
+                        color:$basicyellow;
+                    }
+                }
+            }/*figure*/
+        }
+        >div{
+            >div:nth-of-type(1){
+                width:70%;
+                height:160px;
+                background:url('../img/main_04_class03.png') no-repeat;
+                background-size:cover;
+            }
+            >div:nth-of-type(2){
+                width:30%;
+                ul{
+                    width:100%;
+                    padding-left:2vh;
+                    li{
+                        position: relative;
+                    &:before{
+                        content:'>';
+                        display:inline-block;
+                        position: absolute;
+                        right:0;
+                        color:#eee;
+                    }
+                    &:after{
+                        content:'';
+                        border-bottom:1px solid #eee;
+                        margin:4% 0;
+                        display:block;
+
+                    }
+                }
+
+                }
+            }/*2번째 div*/
+        }/*내부 div*/
+    }/*div*/
+}
+
+/* --------------- 1-2-5. 게시판 --------------- */
+.main_05_board{
+    @include normal_layout(70%,0 auto,3vh 0 6vh 0);
+    div{
+        @include display_flex(flex,space-between ,center);
+        article{
+            padding:2vh 0;
+            width:33%;
+            height:290px;
+            margin-right:1%;
+            h3{padding-bottom:3vh}
+        table{
+            
+            tr{
+                line-height:2em;
+                float:left;
+                width:100%;
+            td:nth-of-type(1){color:$basicgray; float:left;}
+            td:nth-of-type(2){color:$basicsoftgray;float:right;}
+            }
+            }
+        }/*article*/
+        article:nth-of-type(1){
+            div{
+                width:95%;
+                overflow:hidden;
+                img{width:100%;}
+            }
+        }       
+    }
+}
+
+/* --------------- 1-2-6. 층별안내 --------------- */
+.main_06_floor {
+    @include normal_layout(100%,0 auto,5vh 0);
+    background:$basicgray;
+    h2 {
+        @include normal_layout(70%,0 auto,0);
+        color:$basicyellow;}    
+    >div{
+        @include normal_layout(70%,0 auto,2vh 0);
+        @include display_flex(flex,space-between ,center );
+        div:nth-of-type(1){
+            width:30%;
+            padding:0 2vh;
+            color:$basicwhite;
+            line-height:2em;
+            span{
+            color:$basicsoftgray;
+            margin-right:10px;
+            }
+        }
+        div:nth-of-type(2){
+            width:65%;
+            img{width:100%;}
+        }
+    }
+}
+
+/* --------------- 1-2-7. 위치맵 --------------- */
+.main_07_map{
+    @include normal_layout(70%,0 auto,6vh 0 3vh 0);
+    >div{
+        @include display_flex(flex,space-between,center);
+        h2 {color:$basicyellow;}
+        div:nth-of-type(1){
+            width:40%;
+            p{
+                padding:2vh 0;
+                white-space:pre-line;}
+            }
+        div:nth-of-type(2){
+            width:60%;
+            height:400px;
+        }
+    }
+}
+
+/* --------------- 1-2-8. 뉴스레터 --------------- */
+.main_08_letter{
+    @include normal_layout(70%,0 auto,3vh 0);
+    text-align:center;
+    h2{
+        margin:3vh 0;
+        
+    }
+    div{
+        border:1px solid $basicgray;
+        width:60%;
+        margin:0 auto;
+        input{
+            width: 70%;
+            padding:18px 10px;
+            border:none;
+            }
+        button{
+            width: 29.2%;
+            padding:18px 10px;
+            border:none;
+            background:$basicgray;
+            color:$basicyellow;
+            margin-right:-3px;
+            span{
+                &:after {
+                    content:'>';
+                    margin-left:20px;
+                }
+            }
+
+
+        }
+
+    }
+
+}
+
+
+footer {
+    clear:both;
+    border-top:$basicyellow solid 2px;
+    text-align: center;
+    padding:2vh;
+    div{
+        @include normal_layout(70%,0 auto,2vh 0);        
+        h2{letter-spacing: .5em; font-size:35px;}
+        p{line-height:1.5em; color:$basicsoftgray;}
+        span a{
+            width:40px; height:40px;
+                    background:url('../img/main_footer_icon.png')no-repeat;
+                    display:inline-block;
+                    font-size:0;
+                    margin:0 2%;
+           &:nth-of-type(1){background-position: 0;}
+           &:nth-of-type(2){background-position:-75px 0;}
+           &:nth-of-type(3){background-position:-148px 0;}
+           &:nth-of-type(4){background-position:-221px 0;}
+           &:nth-of-type(5){background-position:-295px 0;}
+            }        
+
+        ul{
+            @include display_flex(flex,center,center);
+            padding:4vh 0 1vh 0; 
+            li{
+                &:after {
+                    content:'|';
+                    padding:0 10px;
+                }
+                &:last-child:after{content:'';}                
+            }
+        }
+    }
+    
+}
+
+
+aside{
+    position:fixed;
+    bottom:0; right:0;
+    background:$basicgray;
+    color:$basicwhite;
+}
