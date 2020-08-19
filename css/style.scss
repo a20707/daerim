@@ -51,8 +51,8 @@ header{
     position: fixed;
     top:0; left:0;
     z-index: 3;
-    &:hover {background:rgba(255,255,255,0.9)}
-    &:hover .head_hide { background:rgba(255,255,255,0.9);top:65px;}
+    &:hover {background:rgba(0,0,0,0.8)}
+    &:hover .head_hide { background:rgba(0,0,0,0.8);left:0px;}
     >div {
         // background:rgba(255,255,255,0.8);
         position: relative;
@@ -64,8 +64,8 @@ header{
             h1{
                 width:25%;
                 font-size:35px;
-                text-transform: uppercase; letter-spacing: .2em; color:$basicblck;
-                a{color:$basicblck;}
+                text-transform: uppercase; letter-spacing: .2em; 
+                a{color:$basicwhite;}
             }
             >nav{
                 position: relative;
@@ -78,7 +78,7 @@ header{
                         width:25%;
                         text-align:center;
                         a{
-                            color:$basicblck;
+                            color:$basicwhite;
                             font-weight:800;
                         }
                         
@@ -100,7 +100,7 @@ header{
                     right: 0;
                     width: 25px;
                     height: 2px;
-                    background-color:$basicblck;
+                    background-color:$basicwhite;
                     border-radius: 4px;                
                     }
                 span:nth-of-type(1){top:0;}
@@ -110,13 +110,13 @@ header{
         }/*head*/
         .head_hide{                        
             position: absolute; 
-            top:-500%; left:0;
-            transition:.7s;
+            top:65px; left:-200%;
+            transition:.8s;
             @include normal_layout(100%,0 auto,0);
             div{
                 @include normal_layout(70%,0 auto,0);
                 @include display_flex(flex,space-between ,flex-start);
-                div{width:25%; padding:1vh; img{width:80%;}}
+                div{width:25%; padding:1vh 0; img{width:80%;}}
                 .hide_menu{
                     width:65%;
                     padding:0;
@@ -127,9 +127,10 @@ header{
                         li{
                             line-height:2em;
                             a{
-                                &:hover {                                    
-                                    font-weight:800;
-                                    color:$basicblck;
+                                color:$basicwhite;
+                                &:hover {
+                                   
+                                    color:$basicyellow;
                                 }
                             }
                         }
@@ -541,6 +542,188 @@ footer {
 aside{
     position:fixed;
     bottom:0; right:0;
-    background:$basicgray;
-    color:$basicwhite;
+
+
+    ul{
+        li{
+            width:100px; height:100px; background:$basicgray;
+            @include display_flex(flex,center ,center );
+            a{color:$basicwhite;}
+        }
+    }
+}
+
+/* --------------- 서브 페이지 --------------- */
+/* --------------- 서브 페이지 --------------- */
+
+
+/* --------------- 2. 서브 1페이지 --------------- */
+
+/* --------------- 1-1.  --------------- */
+
+.sub1_1{
+    position: relative;
+    
+    .header {
+        position: relative;
+        height:250px;
+        background:$basicgray;
+            div{
+                @include normal_layout(70%,0 auto ,0);
+                &:nth-of-type(1){
+                    padding-top:100px;
+                    span{
+                        position: relative;
+                        display: inline-block;
+                        font-weight: 700;
+                        font-size: 0.8rem;
+                        color: #fff;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;                            
+                            width: 5rem;
+                            height: 1px;
+                            background-color: #eee;
+                        }
+                    }/*span*/
+                    }/*div 1*/
+                &:nth-of-type(2){
+                    h2{
+                        display:inline-block;
+                        margin-right:20px;
+                        color:$basicwhite;
+                        font-size:2.4em;
+                        }/*h2*/
+                    span{color:$basicwhite;}
+                    }/*div 2*/
+                }/*div*/
+            }
+    
+    .sub_main01{
+        @include normal_layout(70%,0 auto ,5vh 0);
+        .slide{
+            position: relative;
+
+            .imgs{
+                position:relative;
+                width:70%;
+                height:40vw;
+                overflow: hidden;
+                margin:0 auto;
+                img{
+                    width:100%;
+                }
+                }
+            .indi{position: absolute; bottom:0;
+                    a{
+                    }
+                }
+            div:nth-of-type(3)
+
+        }
+    }
+}
+
+
+
+/* --------------- 2. 서브 1페이지 --------------- */
+
+/* --------------- 4-1.  --------------- */
+
+.sub4_1{
+    position: relative;
+    
+    .header {
+        position: relative;
+        height:250px;
+        background:$basicgray;
+            div{
+                @include normal_layout(70%,0 auto ,0);
+                &:nth-of-type(1){
+                    padding-top:100px;
+                    span{
+                        position: relative;
+                        display: inline-block;
+                        font-weight: 700;
+                        font-size: 0.8rem;
+                        color: #fff;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;                            
+                            width: 5rem;
+                            height: 1px;
+                            background-color: #eee;
+                        }
+                    }/*span*/
+                    }/*div 1*/
+                &:nth-of-type(2){
+                    h2{
+                        display:inline-block;
+                        margin-right:20px;
+                        color:$basicwhite;
+                        font-size:2.4em;
+                        }/*h2*/
+                    span{color:$basicwhite;}
+                    }/*div 2*/
+                }/*div*/
+            }
+
+    .grid{
+        position: relative;
+        @include normal_layout(70%,0 auto ,2vh 0 );
+        
+        ul{
+            width:100%;
+            li{
+                width:32%;
+                padding:2vh;
+                margin:2vh 0;
+                border:1px solid #eee;
+                display:inline-block;
+                &:nth-of-type(3n+2){margin:0 1%;} 
+                
+                a{
+                    strong{
+                    display:block;
+                    font-weight:700;
+                    color:$basicblck;
+                    font-size:1.1em;
+                    height:3rem;
+                }
+                    p{
+                        display:block;
+                        height:6.6rem;
+                        color:$basicsoftgray;
+                    }
+                    span{display:inline-block;
+                    &:nth-of-type(1){
+                        color:$basicsoftgray;
+                        border:1px solid transparent;
+                        &:after{
+                            content:'';                            
+                            margin:5% 0;
+                            width:100%; height:1px;
+                            background:$basicsoftgray;
+                            display:block;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        color:$basicsoftgray;
+                        float:right;
+                    }
+                    }/*span*/
+                }/*a*/
+            }/*li*/
+        }/*ul*/
+        .indi{
+            @include normal_layout(100%,0 auto ,2vh 0);
+            text-align: center;
+            span{display:inline-block;}
+        }
+        }
+    
 }

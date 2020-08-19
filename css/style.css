@@ -28,12 +28,12 @@ header {
 }
 
 header:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 header:hover .head_hide {
-  background: rgba(255, 255, 255, 0.9);
-  top: 65px;
+  background: rgba(0, 0, 0, 0.8);
+  left: 0px;
 }
 
 header > div {
@@ -66,11 +66,10 @@ header > div .head h1 {
   font-size: 35px;
   text-transform: uppercase;
   letter-spacing: .2em;
-  color: #000;
 }
 
 header > div .head h1 a {
-  color: #000;
+  color: #fff;
 }
 
 header > div .head > nav {
@@ -99,7 +98,7 @@ header > div .head > nav > ul:first-child > li {
 }
 
 header > div .head > nav > ul:first-child > li a {
-  color: #000;
+  color: #fff;
   font-weight: 800;
 }
 
@@ -122,7 +121,7 @@ header > div .head .menu-trigger span {
   right: 0;
   width: 25px;
   height: 2px;
-  background-color: #000;
+  background-color: #fff;
   border-radius: 4px;
 }
 
@@ -142,10 +141,10 @@ header > div .head .menu-trigger span:nth-of-type(3) {
 
 header > div .head_hide {
   position: absolute;
-  top: -500%;
-  left: 0;
-  -webkit-transition: .7s;
-  transition: .7s;
+  top: 65px;
+  left: -200%;
+  -webkit-transition: .8s;
+  transition: .8s;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -170,7 +169,7 @@ header > div .head_hide div {
 
 header > div .head_hide div div {
   width: 25%;
-  padding: 1vh;
+  padding: 1vh 0;
 }
 
 header > div .head_hide div div img {
@@ -200,9 +199,12 @@ header > div .head_hide div .hide_menu ul li {
   line-height: 2em;
 }
 
+header > div .head_hide div .hide_menu ul li a {
+  color: #fff;
+}
+
 header > div .head_hide div .hide_menu ul li a:hover {
-  font-weight: 800;
-  color: #000;
+  color: #f9d342;
 }
 
 header > div .head_hide .dummy {
@@ -801,7 +803,250 @@ aside {
   position: fixed;
   bottom: 0;
   right: 0;
+}
+
+aside ul li {
+  width: 100px;
+  height: 100px;
   background: #202228;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside ul li a {
   color: #fff;
+}
+
+/* --------------- 서브 페이지 --------------- */
+/* --------------- 서브 페이지 --------------- */
+/* --------------- 2. 서브 1페이지 --------------- */
+/* --------------- 1-1.  --------------- */
+.sub1_1 {
+  position: relative;
+}
+
+.sub1_1 .header {
+  position: relative;
+  height: 250px;
+  background: #202228;
+  /*div*/
+}
+
+.sub1_1 .header div {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  /*div 1*/
+  /*div 2*/
+}
+
+.sub1_1 .header div:nth-of-type(1) {
+  padding-top: 100px;
+  /*span*/
+}
+
+.sub1_1 .header div:nth-of-type(1) span {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.sub1_1 .header div:nth-of-type(1) span:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 5rem;
+  height: 1px;
+  background-color: #eee;
+}
+
+.sub1_1 .header div:nth-of-type(2) {
+  /*h2*/
+}
+
+.sub1_1 .header div:nth-of-type(2) h2 {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  font-size: 2.4em;
+}
+
+.sub1_1 .header div:nth-of-type(2) span {
+  color: #fff;
+}
+
+.sub1_1 .sub_main01 {
+  width: 70%;
+  margin: 0 auto;
+  padding: 5vh 0;
+}
+
+.sub1_1 .sub_main01 .slide {
+  position: relative;
+  div: nth-of-type(3);
+}
+
+.sub1_1 .sub_main01 .slide .imgs {
+  position: relative;
+  width: 70%;
+  height: 40vw;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.sub1_1 .sub_main01 .slide .imgs img {
+  width: 100%;
+}
+
+.sub1_1 .sub_main01 .slide .indi {
+  position: absolute;
+  bottom: 0;
+}
+
+/* --------------- 2. 서브 1페이지 --------------- */
+/* --------------- 4-1.  --------------- */
+.sub4_1 {
+  position: relative;
+}
+
+.sub4_1 .header {
+  position: relative;
+  height: 250px;
+  background: #202228;
+  /*div*/
+}
+
+.sub4_1 .header div {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  /*div 1*/
+  /*div 2*/
+}
+
+.sub4_1 .header div:nth-of-type(1) {
+  padding-top: 100px;
+  /*span*/
+}
+
+.sub4_1 .header div:nth-of-type(1) span {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.sub4_1 .header div:nth-of-type(1) span:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 5rem;
+  height: 1px;
+  background-color: #eee;
+}
+
+.sub4_1 .header div:nth-of-type(2) {
+  /*h2*/
+}
+
+.sub4_1 .header div:nth-of-type(2) h2 {
+  display: inline-block;
+  margin-right: 20px;
+  color: #fff;
+  font-size: 2.4em;
+}
+
+.sub4_1 .header div:nth-of-type(2) span {
+  color: #fff;
+}
+
+.sub4_1 .grid {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  padding: 2vh 0;
+  /*ul*/
+}
+
+.sub4_1 .grid ul {
+  width: 100%;
+  /*li*/
+}
+
+.sub4_1 .grid ul li {
+  width: 32%;
+  padding: 2vh;
+  margin: 2vh 0;
+  border: 1px solid #eee;
+  display: inline-block;
+  /*a*/
+}
+
+.sub4_1 .grid ul li:nth-of-type(3n+2) {
+  margin: 0 1%;
+}
+
+.sub4_1 .grid ul li a {
+  /*span*/
+}
+
+.sub4_1 .grid ul li a strong {
+  display: block;
+  font-weight: 700;
+  color: #000;
+  font-size: 1.1em;
+  height: 3rem;
+}
+
+.sub4_1 .grid ul li a p {
+  display: block;
+  height: 6.6rem;
+  color: #777;
+}
+
+.sub4_1 .grid ul li a span {
+  display: inline-block;
+}
+
+.sub4_1 .grid ul li a span:nth-of-type(1) {
+  color: #777;
+  border: 1px solid transparent;
+}
+
+.sub4_1 .grid ul li a span:nth-of-type(1):after {
+  content: '';
+  margin: 5% 0;
+  width: 100%;
+  height: 1px;
+  background: #777;
+  display: block;
+}
+
+.sub4_1 .grid ul li a span:nth-of-type(2) {
+  color: #777;
+  float: right;
+}
+
+.sub4_1 .grid .indi {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2vh 0;
+  text-align: center;
+}
+
+.sub4_1 .grid .indi span {
+  display: inline-block;
 }
 /*# sourceMappingURL=style.css.map */
