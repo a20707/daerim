@@ -51,8 +51,8 @@ header{
     position: fixed;
     top:0; left:0;
     z-index: 3;
-    &:hover {background:rgba(0,0,0,0.8)}
-    &:hover .head_hide { background:rgba(0,0,0,0.8);left:0px;}
+    // &:hover {background:rgba(0,0,0,0.8)}
+    &:hover .head_hide {top:65px;}
     >div {
         // background:rgba(255,255,255,0.8);
         position: relative;
@@ -85,42 +85,44 @@ header{
                     }/*li*/
                 }/*ul end*/
             }/*nav end*/
-            .menu-trigger{
-                position: relative;
-                width: 10%;
-                height: 16px;
-                z-index:10;
-                transform: scale(1);
+            /*트리거*/
+            // .menu-trigger{
+            //     position: relative;
+            //     width: 10%;
+            //     height: 16px;
+            //     z-index:10;
+            //     transform: scale(1);
         
-                display: inline-block;
-                transition: all .4s;
-                box-sizing: border-box;
-                span{                    
-                    position: absolute;
-                    right: 0;
-                    width: 25px;
-                    height: 2px;
-                    background-color:$basicwhite;
-                    border-radius: 4px;                
-                    }
-                span:nth-of-type(1){top:0;}
-                span:nth-of-type(2){top:50%; transform: translateY(-50%);}
-                span:nth-of-type(3){bottom:0;}   
-                }/*트리거 메뉴 종료*/
+            //     display: inline-block;
+            //     transition: all .4s;
+            //     box-sizing: border-box;
+            //     span{                    
+            //         position: absolute;
+            //         right: 0;
+            //         width: 25px;
+            //         height: 2px;
+            //         background-color:$basicwhite;
+            //         border-radius: 4px;                
+            //         }
+            //     span:nth-of-type(1){top:0;}
+            //     span:nth-of-type(2){top:50%; transform: translateY(-50%);}
+            //     span:nth-of-type(3){bottom:0;}   
+                // }/*트리거 메뉴 종료*/
         }/*head*/
         .head_hide{                        
             position: absolute; 
-            top:65px; left:-200%;
+            top:-200px; left:0;
             transition:.8s;
             @include normal_layout(100%,0 auto,0);
+
             div{
                 @include normal_layout(70%,0 auto,0);
                 @include display_flex(flex,space-between ,flex-start);
                 div{width:25%; padding:1vh 0; img{width:80%;}}
                 .hide_menu{
-                    width:65%;
+                    width:75%;
                     padding:0;
-                    @include display_flex(flex,space-between ,flex-start);
+                    margin-left:10%;
                     ul{
                     width:25%;
                     text-align:center;
@@ -167,37 +169,42 @@ main{position:relative;}
 .main_01_roll{
     position: relative;
     .slide{
-        .imgs{
-            position:relative;
-            width:100%;
-            height:65vh;
-            overflow: hidden;
-            background-color:beige;
-            img{width:100%;}
-        }
-        .btn{
-            position: absolute;
-            bottom:0;
-            right:0;
-            a{
-                @include display_flex(flex,center ,center );
-                width:55px;
-                height:55px;
-                font-size:1.5em;
-                background:rgba(255,255,255,0.6);
+        width:100%;
+        margin:0 auto;
+            .imgs_ul{
+                .imgs_li{
+                    position:relative;
+                    >div{
+                        height:85vh;
+                        img{min-width:100%;}
+                    }
+                    .txt{
+                        position:absolute;
+                        top:50%; left:10%;
+                        transform: translate(-10%,-50%);
+                        opacity:0;
+                        transition:.5s;
+                        width:30%;
+                        height:35%;
+                        background:rgba(0,0,0,0.5);
+                        border-radius: 58px;
+                        @include display_flex(flex,center ,flex-start);
+                        flex-direction: column;
+                        padding:0 2%;
+                        &.active{
+                            opacity: 1;
+                        }
+                        h2 {line-height:1.2em; color:#fff;}
+                        p {color:#fff}
+                        a {color:#fff}                     
+                    }
+                }
             }
-            
-            a:hover {
-            background:#fff;
-            font-weight:700;}
-        }
+  
+
         
     }
-    .rolling_txt{
-        position: absolute;
-        top:50%; left:20%;
-        transform: translate(-20%,-50%);
-    }
+    
 
 }
 

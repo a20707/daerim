@@ -27,13 +27,8 @@ header {
   /*header div*/
 }
 
-header:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
 header:hover .head_hide {
-  background: rgba(0, 0, 0, 0.8);
-  left: 0px;
+  top: 65px;
 }
 
 header > div {
@@ -58,7 +53,7 @@ header > div .head {
           align-items: center;
   height: 65px;
   /*nav end*/
-  /*트리거 메뉴 종료*/
+  /*트리거*/
 }
 
 header > div .head h1 {
@@ -102,47 +97,10 @@ header > div .head > nav > ul:first-child > li a {
   font-weight: 800;
 }
 
-header > div .head .menu-trigger {
-  position: relative;
-  width: 10%;
-  height: 16px;
-  z-index: 10;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  display: inline-block;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-header > div .head .menu-trigger span {
-  position: absolute;
-  right: 0;
-  width: 25px;
-  height: 2px;
-  background-color: #fff;
-  border-radius: 4px;
-}
-
-header > div .head .menu-trigger span:nth-of-type(1) {
-  top: 0;
-}
-
-header > div .head .menu-trigger span:nth-of-type(2) {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-header > div .head .menu-trigger span:nth-of-type(3) {
-  bottom: 0;
-}
-
 header > div .head_hide {
   position: absolute;
-  top: 65px;
-  left: -200%;
+  top: -200px;
+  left: 0;
   -webkit-transition: .8s;
   transition: .8s;
   width: 100%;
@@ -177,17 +135,9 @@ header > div .head_hide div div img {
 }
 
 header > div .head_hide div .hide_menu {
-  width: 65%;
+  width: 75%;
   padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  margin-left: 10%;
 }
 
 header > div .head_hide div .hide_menu ul {
@@ -239,51 +189,67 @@ main {
   position: relative;
 }
 
-.main_01_roll .slide .imgs {
+.main_01_roll .slide {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main_01_roll .slide .imgs_ul .imgs_li {
   position: relative;
-  width: 100%;
-  height: 65vh;
-  overflow: hidden;
-  background-color: beige;
 }
 
-.main_01_roll .slide .imgs img {
-  width: 100%;
+.main_01_roll .slide .imgs_ul .imgs_li > div {
+  height: 85vh;
 }
 
-.main_01_roll .slide .btn {
+.main_01_roll .slide .imgs_ul .imgs_li > div img {
+  min-width: 100%;
+}
+
+.main_01_roll .slide .imgs_ul .imgs_li .txt {
   position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.main_01_roll .slide .btn a {
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(-10%, -50%);
+          transform: translate(-10%, -50%);
+  opacity: 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  width: 30%;
+  height: 35%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 58px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 55px;
-  height: 55px;
-  font-size: 1.5em;
-  background: rgba(255, 255, 255, 0.6);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 2%;
 }
 
-.main_01_roll .slide .btn a:hover {
-  background: #fff;
-  font-weight: 700;
+.main_01_roll .slide .imgs_ul .imgs_li .txt.active {
+  opacity: 1;
 }
 
-.main_01_roll .rolling_txt {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  -webkit-transform: translate(-20%, -50%);
-          transform: translate(-20%, -50%);
+.main_01_roll .slide .imgs_ul .imgs_li .txt h2 {
+  line-height: 1.2em;
+  color: #fff;
+}
+
+.main_01_roll .slide .imgs_ul .imgs_li .txt p {
+  color: #fff;
+}
+
+.main_01_roll .slide .imgs_ul .imgs_li .txt a {
+  color: #fff;
 }
 
 /* --------------- 1-2-2. 미술관 소개 --------------- */

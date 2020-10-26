@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- <link rel="icon" href="img/favi.ico">    -->
+
+     <link rel="stylesheet" type="text/css" href="css/slick.css">
+  
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>  
+  <script src="js/common.js"></script>
+     
+
+
     
 </head>
 
@@ -16,81 +25,51 @@
 
 <body>
    
-   <header>
-       <div><!--head div-->
-           <div class="head">
-                        <h1><a href="#">DAERIM</a></h1>
-                        <nav>
-                        <ul>
-                            <li><a href="#"> D - MUSEUM</a> 
-                            </li>
-                            <li><a href="#">EXHIBITION</a>
-                                
-                            </li>
-                            <li><a href="#">PROGRAM</a></li>
-                            <li><a href="#">NEWS</a></li>
-                        </ul>
-                        </nav>
-                        <a class="menu-trigger" href="#">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </a>
-
-                        <div class="head_hide">
-                            <div>
-                                 <div>
-                                     <img src="img/img_dmuseum.jpg" alt="dmuseum">
-                                 </div>
-                                 <div class="hide_menu">                
-                                     <ul>
-                                         <li><a href="">미술관 소개</a></li>
-                                         <li><a href="">오시는 길</a></li>
-                                         <li><a href="">굿즈 모아 전자상가</a></li>
-                                     </ul>
-                                     <ul>
-                                         <li><a href="">관람안내</a></li>
-                                         <li><a href="">현재전시</a></li>
-                                         <li><a href="">지난전시</a></li>
-                                     </ul>
-                                     <ul>
-                                         <li><a href="#">클래스</a></li>
-                                     </ul>
-                                     <ul>
-                                         <li><a href="">공지사항</a></li>
-                                         <li><a href="">FAQ</a></li>
-                                         <li><a href="">1:1 문의</a></li>
-                                         <li><a href="">이벤트</a></li>
-                                     </ul>
-                                 </div><!--hide_menu-->
-                                 <div class="dummy"></div>
-             
-                             </div>
-                        </div><!--head_hide-->
-           </div>
-           
-       </div><!--head div-->
-   </header>
-
+   <header></header>
+   
    <main>
-       <section class="main_01_roll">
-            <div class="slide">
-                <div class="imgs">                      
-                    <img src="img/main_01_rolling.png" alt="main_rollingimg">
-                        
-                </div>
-                <div class="btn">
-                    <a> < </a>
-                    <a> > </a>
-                </div>                
-            </div>
-            <div class="rolling_txt">
-                <p>현재전시</p>
-                <h2>시대를 보는 눈<br/>
-                    : 한국 근현대 미술</h2>
-                <span>자세히 보기</span>
-            </div>
-       </section>
+        <section class="main_01_roll">
+            <div class="slide s_v1">
+                <ul class="imgs_ul">
+                    <li class="imgs_li">
+                        <div>
+                            <img src="img/main_01_rolling01.jpg" alt="main_rollingimg1">
+                            <div class="txt">
+                                <p>현재전시</p>
+                                <h2>시대를 보는 눈<br/>
+                                    : 한국 근현대 미술</h2>
+                                <span><a href="#">자세히 보기</a></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="imgs_li">
+                        <div>
+                            <img src="img/main_01_rolling02.jpg" alt="main_rollingimg1">
+                            <div class="txt">
+                                <p>현재전시</p>
+                                <h2>즐거운 나의집<br/>
+                                    : THE SELBY HOUSE</h2>
+                                <span><a href="#">자세히 보기</a></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="imgs_li">
+                        <div>
+                            <img src="img/main_01_rolling03.jpg" alt="main_rollingimg1">
+                            <div class="txt">
+                                <p>현재전시</p>
+                                <h2>글씨가 안 보임<br/>
+                                    : THE SELBY HOUSE</h2>
+                                <span><a href="#">자세히 보기</a></span>
+                            </div>
+                        </div>
+                    </li>
+        
+        
+        
+                </ul>
+            </div> 
+        </section>
        <!-- ======= 2. 소개 ======= -->
        <section class="main_02_about">
            <h2>D-musuem</h2>
@@ -292,44 +271,82 @@
            </div>
        </section>
    </main>
+   <footer></footer>
+   <aside></aside>
   
-   <footer>
-       <div>
-            <h2>DAERIM</h2>
-            <span>
-                <a href="facebook.com">face</a>
-                <a href="#">twitter</a>
-                <a href="#">insta</a>
-                <a href="#">naver tv</a>
-                <a href="#">youtube</a>
-            </span>
-            <ul>
-                <li><a href="">개인정보 처리방침</a></li>
-                <li><a href="">이용약관</a></li>
-                <li><a href="">영상정보처리기기 운영 관리방침</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">문화체육관광부</a></li>           
-            </ul>
-            <p>
-                (재)대림문화재단 
-                사업자등록번호: 305-82-09028 l 서울특별시 종로구 자하문로4길 21(통의동 35-1)
-            </p>            
-            <p>
-                COPYRIGHT 2015 BY DAELIM MUSEUM ALL RIGHT RESERVED.
-            </p>
-            
-            
-        </div>
-   </footer>
-  
-    <aside>
-       <ul>
-           <li><a href="#">TOP</a></li>
-       </ul>
-   </aside> 
-     
-
    
+     
+   <script>
+    $(function() {
+        
+        $(".imgs_ul").slick({
+            breakpoint: 500,
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 2000
+        });
+        
+        $('.txt').addClass('active');
+        
+        $('.imgs_ul').on('beforeChange',function(event, slick, currentSlide, nextSlide){
+            $('.txt').removeClass('active');
+        });
+        
+        $('.imgs_ul').on('afterChange',function(event, slick, currentSlide){
+            $('.txt').addClass('active');
+        });
+        
+        
+     
+    });
+</script>
+<script>
+
+$(window).scroll(function () {
+        var scrollY =$(window).scrollTop();
+        var winH = window.innerHeight;
+        console.log(scrollY);
+        console.log ( winH );
+        console.log ( $('.main_02_about').offset().top );
+
+    if( scrollY > $('.main_02_about').offset().top ){
+        $('header').css({background:'rgba(0,0,0,0.8)'})
+        $('header .head_hide').css({background:'rgba(0,0,0,0.8)'})
+    }else{
+        $('header').css({background:'none'});
+        $('header .head_hide').css({background:'none'})
+    }
+
+
+
+
+    //     if(scrollY<100){
+
+    //         mainImg[idx].classList.add('active'); //고정 이미지 액티브            
+    //         $('.menu-trigger').parent('div').addClass('active'); // 버거메뉴 활성
+            
+    //         $('.menu-trigger').on('click',function(){
+    // //            $(this).addClass('active');
+    //             $('.menu-overlay').show(); //전체메뉴 활성
+    //             $('body').addClass('active'); //바디 제어
+    //         })
+            
+    //         $('.btnCloseMenu').on('click',function(){            
+    //             $('.menu-overlay').hide(); //전체메뉴 비활성
+    //             $('body').removeClass('active'); //바디 제어 해제
+    //             })  
+    //     }        
+
+    });
+
+
+
+
+
+</script>
 
     
             
